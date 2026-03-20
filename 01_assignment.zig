@@ -1,5 +1,11 @@
 const print = @import("std").debug.print;
 
+// 値の代入は、次の構文に従う： `(const|var) identifier[: type] = value`
+//
+// - `const` は `identifier` が不変の値を格納する定数であることを示す
+// - `var` は `identifier` が可変の値を格納する変数であることを示す
+// - `: type` は `identifier` の型注釈であり、値のデータ型が推論可能な場合は省略できる
+
 pub fn main() void {
     const constant: i32 = 5; // signed 32-bit constant
     var variable: u32 = 5000; // unsigned 32-bit variable
@@ -7,7 +13,7 @@ pub fn main() void {
     constant = 1; // const 変数への代入は、エディタではエラーとならず、ビルド時にエラーとなる
     variable = 100;
 
-    // @as performs an explicit type coercion
+    // @as は明示的な型変換を行う
     const inferred_constant = @as(i32, 5);
     var inferred_variable = @as(u32, 5000);
 

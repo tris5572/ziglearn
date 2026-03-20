@@ -1,6 +1,9 @@
 const expect = @import("std").testing.expect;
 
-// 3項演算子はない。
+// Zig の if 文は bool 型（つまり true または false）の値を受け付ける。
+// C や JavaScript のような言語とは異なり、暗黙的に bool 型に変換される値はない。
+//
+// 3項演算子 (cond ? a : b) は Zig にはない。
 
 test "if statement" {
     const a = true;
